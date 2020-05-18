@@ -1,6 +1,6 @@
 CREATE DATABASE seti
 
-CREATE TABLE "tutorial" (
+CREATE TABLE "tutoriais" (
   "id" SERIAL PRIMARY KEY,
   "title" text NOT NULL,
   "description" text NOT NULL,
@@ -8,16 +8,16 @@ CREATE TABLE "tutorial" (
   "updated_at" timestamp DEFAULT (now())
 );
 
-CREATE TABLE "file" (
+CREATE TABLE "files" (
   "id" SERIAL PRIMARY KEY,
   "name" text,
   "path" text NOT NULL,
   "tutorial_id" int
 );
 
-ALTER TABLE "file" ADD FOREIGN KEY ("tutorial_id") REFERENCES "tutorial" ("id");
+ALTER TABLE "files" ADD FOREIGN KEY ("tutorial_id") REFERENCES "tutoriais" ("id");
 
-CREATE TABLE "user" (
+CREATE TABLE "users" (
   "id" SERIAL PRIMARY KEY,
   "name" text NOT NULL,
   "type" text NOT NULL,
@@ -51,15 +51,15 @@ WITH (OIDS=FALSE);
 
 ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
 
-ALTER TABLE "file"
-DROP CONSTRAINT file_tutorial_id_fkey,
-ADD CONSTRAINT file_tutorial_id_fkey
+ALTER TABLE "files"
+DROP CONSTRAINT files_tutorial_id_fkey,
+ADD CONSTRAINT files_tutorial_id_fkey
 FOREIGN KEY ("tutorial_id")
-REFERENCES "tutorial" ("id")
+REFERENCES "tutoriais" ("id")
 ON DELETE CASCADE;
 
 -- to run seed
 DELETE FROM users;
 
 -- restart sequence auto_increment from tables ids
-ALTER SEQUENCE user_id_seq RESTART WITH 1;
+ALTER SEQUENCE users_id_seq RESTART WITH 1;
