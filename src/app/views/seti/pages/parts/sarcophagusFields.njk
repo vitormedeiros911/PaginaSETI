@@ -1,0 +1,33 @@
+<div class="col-sm-5 col-sm-offset-1">
+  <div class="form-group">
+    <label>Nome *</label>
+    <input type="text" name="name" class="form-control" value="{{message.name}}" required="required" placeholder="Digite seu nome">
+  </div>
+  <div class="form-group">
+    <label>E-mail *</label>
+    <input type="email" name="email" class="form-control" value="{{message.email}}" required="required" placeholder="Digite seu e-mail">
+  </div>
+  <div class="form-group">
+    <label>Telefone</label>
+    <input type="text" name="phoneNumber" class="form-control" value="{{message.phoneNumber}}" placeholder="Digite seu telefone" onkeydown="Mask.apply(this, 'phone')">
+  </div>
+  <div class="form-group">
+    <label>Estado *</label>
+    <input type="text" name="estado" class="form-control" value="{{message.estado}}" placeholder="Digite qual estado você representa" required>
+  </div>
+  <div class="form-group">
+    <label>Município *</label>
+    <input type="text" name="municipio" class="form-control" value="{{message.municipio}}" placeholder="Digite qual município você representa" required>
+  </div>
+</div>
+<div class="col-sm-5">
+  <div class="form-group">
+    <label>Mensagem *</label>
+    <textarea name="text" id="message" required="required" class="form-control" rows="8" placeholder="Digite sua mensagem aqui" value="{{message.text}}"></textarea>
+  </div>
+  <div class="form-group">
+    <button type="submit" name="submit" class="btn btn-default submit-button">Enviar
+      <i class="fa fa-caret-right"></i>
+    </button>
+  </div>
+</div>

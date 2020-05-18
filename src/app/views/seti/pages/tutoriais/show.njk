@@ -1,0 +1,69 @@
+{% extends "../../layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/seti/css/gallery.css">
+    <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.css">
+{% endblock style %}
+
+{% block content %}
+    <section id="top_banner">
+        <div class="banner" style="background: url({{randomImage}}) no-repeat center center / cover;">
+            <div class="inner text-center">
+                <h2 class="banner_heading">Secretaria Municipal de
+                    <span>Tecnologia da Informação</span></h2>
+            </div>
+        </div>
+        <div class="page_info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-6"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-6" style="text-align:right;">Tutoriais<span class="sep">
+                            /
+                        </span><span class="current">{{tutorial.title}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="about-page-section-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-align" style="overflow-x:auto;">
+                <div class="section-heading">
+                    <h2>{{tutorial.title}}</h2>
+                    <br>
+                </div>
+                {{tutorial.description}}
+            </div>
+        </div>
+        <section class="tutorial-single gallery-container">
+            <div class="gallery">
+                <div class="highlight">
+                    {% if not tutorial.files[0] %}
+                        <img src="http://placehold.it/500x500?text=TUTORIAL-SEM-FOTO"/>
+                    {% else %}
+                        <img src="{{tutorial.img}}" alt="{{tutorial.files[0].name}}" onclick="Lightbox.open()">
+                    {% endif %}
+                    <div class="lightbox-target">
+                        <img src="{{tutorial.files[0}.src}}" alt="{{tutorial.files[0].name}}">
+                        <a href="#" class="lightbox-close" onclick="Lightbox.close()">
+                            <i class="fa fa-times-circle"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="gallery-preview">
+                    {% for image in tutorial.files %}
+                        <img src="{{image.src}}" alt="{{image.name}}" {% if loop.index0 == 0 %} class="active" {% endif %} onclick="ImageGallery.setImage(event)">
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+{% endblock content %}
+
+{% block footerScript %}
+<script src="/seti/js/gallery.js"></script>
+{% endblock footerScript %}

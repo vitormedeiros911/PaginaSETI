@@ -1,0 +1,73 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/seti/users/tutoriais" class="brand-link">
+        <img src="/images/seti.png" alt="Logo SETI" class="brand-image" style="opacity: .8">
+        <span class="brand-text font-weight-bold">SETI</span>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="info">
+                <a class="d-block">Olá
+                    {{session.userName}}</a>
+            </div>
+        </div>
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item has-treeview">
+                    <div class="nav-link ">
+                        <i class="nav-icon fa fa-desktop"></i>
+                        <p>
+                            Tutoriais
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </div>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/seti/users/tutoriais" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Ver Tutoriais</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/seti/users/NovoTutorial" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Novo Tutorial</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <div class="nav-link">
+                        <i class="nav-icon fa fa-user"></i>
+                        <p>
+                            Usuários
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </div>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/seti/users/index" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Ver Usuários</p>
+                            </a>
+                        </li>
+                        {% if session.userType == "admin" %}
+                        <li class="nav-item">
+                            <a href="/seti/users/register" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Novo Usuário</p>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

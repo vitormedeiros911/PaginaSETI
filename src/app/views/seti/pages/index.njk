@@ -1,0 +1,95 @@
+{% extends "../layout.njk" %}
+
+{% block content %}
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="fill" style="background:url('{{randomImage}}') no-repeat center center / cover;"></div>
+      <div class="carousel-caption slide-up">
+        <h1 class="banner_heading">Secretaria Municipal de
+          <span>Tecnologia da Informação</span></h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="about-page-section-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 text-align">
+        <div class="section-heading">
+          <h2>Sobre
+            <span>Nós</span></h2>
+          <br>
+        </div>
+        <p class="text-justify" id='texto-principal'>
+          Compete à Secretaria Municipal de Tecnologia e Sistemas de Informação (SETI): I. Dirigir e controlar as atividades inerentes à SETI; II. Coordenar a elaboração do Planejamento Estratégico de Tecnologia da Informação, alinhando-o ao Planejamento Estratégico Institucional; III. Planejar ações da SETI com objetivos de curto, médio e longo prazos, priorizando as diretrizes organizacionais estabelecidas pela Administração Municipal; IV. Supervisionar a execução de projetos; V. Planejar e supervisionar a execução orçamentária das ações da SETI; VI. Supervisionar a execução dos contratos de tecnologia de informação do Município; VII. Coordenar o funcionamento e integração de sua estrutura organizacional e gerenciar seus colaboradores; VIII. Propor medidas que visem à garantia das condições necessárias ao trabalho na área de TI; IX. Prover os meios necessários à implementação de políticas de segurança da informação; X. Emitir pareceres sobre assuntos relacionados à área de TI, quando requisitados pela administração municipal; XI. Promover atividades de prospecção tecnológica em busca de soluções que possam ser adotadas em benefício do Município; XII. Propor a inovação e atualização dos sistemas de informação utilizados pelo Município; XIII...
+        </p>
+        <button type="button" id="btn btn-primary slide" class="btn btn-primary slide" onclick="location.href = '/seti/sobre'">Ler mais
+          <i class="fa fa-caret-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="features-page">
+  <div class="subsection3" style=" overflow-x:hidden;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12 left-section">
+          <div class="subfeature">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <h1>Nossos
+                <span>Serviços.
+                </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 right-section right-background">
+          <div class="subfeature">
+            <div class="featureblock">
+              <div class="col-md-2 col-xs-2 icon">
+                <i class="fa fa-code feature_icon"></i>
+              </div>
+              <div class="col-md-10 col-xs-10">
+                <h4>Desenvolvimento e Suporte de Sistemas</h4>
+                <p>Esta unidade tem como missão o desenvolvimento e a manutenção das ferramentas de software, seja na atividade fim, seja na atividade meio (administrativa) do SETI.</p>
+              </div>
+            </div>
+            <div class="featureblock">
+              <div class="col-md-2 col-xs-2 icon">
+                <i class="fa fa-wifi feature_icon"></i>
+              </div>
+              <div class="col-md-10 col-xs-10">
+                <h4>Infraestrutura e Suporte em Redes</h4>
+                <p>A missão desta unidade é prover a infraestrutura de recursos de telecomunicações exigidos e necessários para garantir a prestação dos serviços com qualidade e segurança ao Município.</p>
+              </div>
+            </div>
+            <div class="featureblock nomargin">
+              <div class="col-md-2 col-xs-2 icon">
+                <i class="fa fa-cog feature_icon"></i>
+              </div>
+              <div class="col-md-10 col-xs-10">
+                <h4>Suporte e Manutenção em Computadores</h4>
+                <p>Sua missão é coordenar, gerenciar e administrar todas as atividades relativas ao atendimento ao usuário dos serviços de informática, como a manutenção de equipamentos do Município.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact-page">
+  <div class="container">
+    <div class="section-heading text-center">
+      <h2>Entre em
+        <span>Contato</span></h2>
+    </div>
+    <div class="row contact-wrap">
+      <div class="status alert alert-success" style="display: none"></div>
+      <form id="main-contact-form" class="contact-form" method="POST" action="/seti/home">
+        {% include "./parts/contatoFields.njk"%}
+      </form>
+    </div>
+  </section>
+{% endblock %}

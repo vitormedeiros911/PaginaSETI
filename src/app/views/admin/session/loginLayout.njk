@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        {% block head %}
+            <title>Secretaria de Tecnologia da Informação de Guaíra - PR</title>
+        {% endblock %}
+        
+        {% include "../layoutParts/style.njk" %}
+        <link rel="stylesheet" href="/admin/plugins/toastr/toastr.min.css">
+
+    </head>
+    <body class="hold-transition login-page" style="background: url('/images/backgrounds/4.jpg') no-repeat center center / cover;">
+        {% block content %}{% endblock content %}
+        {% include "../layoutParts/scripts.njk" %}
+        <script src="/admin/plugins/toastr/toastr.min.js"></script>
+        {% include "../layoutParts/messages.njk"%}
+    </body>
+</html>

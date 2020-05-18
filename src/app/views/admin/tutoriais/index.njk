@@ -1,0 +1,125 @@
+{% extends "../layout.njk" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/admin/plugins/toastr/toastr.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+{% endblock style %}
+
+{% block content %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Tutoriais</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="/seti/users/tutoriais">Tutoriais</a>
+                        </li>
+                        <li class="breadcrumb-item active">Ver Tutoriais</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- /.card -->
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="table" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <i class="fa fa-bullhorn"></i>
+                                            Título</th>
+                                        <th>
+                                            <i class="fa fa-file"></i>
+                                            Arquivos</th>
+                                        <th>
+                                            <i class="fa fa-calendar"></i>
+                                            Publicação</th>
+                                        <th>
+                                            <i class="fa fa-edit">
+                                                Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for tutorial in tutoriais %}
+                                            <tr>
+                                                <td>{{tutorial.title}}</td>
+                                                <td>{{tutorial.files.length}}
+                                                </td>
+                                                <td>{{tutorial.published.day}}
+                                                    às
+                                                    {{tutorial.published.hour}}</td>
+                                                <td>
+                                                    <div class="row">
+                                                        <a class="mr-1" href="/seti/tutoriais/{{tutorial.id}}">
+                                                            <button class="btn btn-success btn-xs">
+                                                                <i class="fa fa-eye"></i>
+                                                            </button>
+                                                        </a>
+                                                        <a class="mr-1" href="/seti/users/tutorial/{{tutorial.id}}/edit">
+                                                            <button class="btn btn-primary btn-xs">
+                                                                <i class="fas fa-pencil-alt"></i>
+                                                            </button>
+                                                        </a>
+                                                        <form class="formDelete" method="POST" action="/seti/users/tutoriais?_method=DELETE">
+                                                            <input type="hidden" name="id" value="{{tutorial.id}}">
+                                                            <button class="btn btn-danger btn-xs" type="submit">
+                                                                <i class="fas fa-trash"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+{% endblock content %}
+
+{% block footerScript %}
+    <script src="/admin/plugins/toastr/toastr.min.js"></script>
+    <script src="/admin/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script>
+        $(function () {
+            $("#table").DataTable({"responsive": true, "autoWidth": false});
+        });
+    </script>
+    {% include "../layoutParts/messages.njk"%}
+    <script>
+        let formDelete = document.querySelectorAll(".formDelete")
+
+        for (let i = 0; i < formDelete.length; i++) {
+            formDelete[i].addEventListener("submit", function (event) {
+                const confirmar = confirm("Deseja excluir este tutorial?")
+                if (!confirmar) {
+                    event.preventDefault()
+                }
+            })
+        }
+    </script>
+{% endblock footerScript %}

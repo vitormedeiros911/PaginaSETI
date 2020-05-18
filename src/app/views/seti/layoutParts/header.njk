@@ -1,0 +1,64 @@
+<section id="top-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-7 col-xs-7 top-header-links">
+                <ul class="contact_links">
+                    <li>
+                        <i class="fa fa-phone"></i>
+                        <a>44 3642-9973</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/seti/home">
+                        <h1>SETI</h1>
+                        <span>Município de Guaíra</span></a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="/seti">Home</a>
+                        </li>
+                        <li>
+                            <a href="/seti/tutoriais/index">Tutoriais</a>
+                        </li>
+                        <li>
+                            <a href="/seti/sistemas">Sistemas</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://sesuite.guaira.pr.gov.br/softexpert/workspace?page=dashboard,6bf52aab19364d2e92156061d795ee0f">Chamado Técnico</a>
+                        </li>
+                        {% if not session.userId %}
+                            <li>
+                                <a href="/seti/home#contact-page">Contate-nos</a>
+                            </li>
+
+                            <li>
+                                <a href="/seti/users/login">Login de Administrador</a>
+                            </li>
+                        {% endif %}
+                        {% if session.userId %}
+                            <li>
+                                <a href="/seti/users/tutoriais">Painel Administrivo</a>
+                            </li>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+</header>

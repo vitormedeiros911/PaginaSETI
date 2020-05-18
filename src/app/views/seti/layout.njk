@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        {% block head %}
+            <title>Secretaria de Tecnologia da Informação de Guaíra - PR</title>
+        {% endblock %}
+
+        {% include "./layoutParts/links.njk" %}
+        {% block style %}{% endblock %}
+        {% block script %}{% endblock %}
+    </head>
+    <body id="wrapper" class="blue">
+        {% include "./layoutParts/header.njk" %}
+        {% include "./layoutParts/messages.njk" %}
+        {% block content %}{% endblock %}
+        {% include "./layoutParts/footer.njk" %}
+        {% block footerScript %}{% endblock footerScript %}
+    </body>
+</html>

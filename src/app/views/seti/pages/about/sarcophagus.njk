@@ -1,0 +1,93 @@
+{% extends "../../layout.njk" %}
+
+{% block content %}
+    <section id="top_banner">
+        <div class="banner" style="background: url({{randomImage}}) no-repeat center center / cover;">
+            <div class="inner text-center">
+                <h2 class="banner_heading">Secretaria Municipal de
+                    <span>Tecnologia da Informação</span></h2>
+            </div>
+        </div>
+        <div class="page_info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-6"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-6" style="text-align:right;">Home / Sistemas<span class="sep">
+                            /
+                        </span><span class="current">Sarcophagus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="about-page-section-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-7 text-align">
+                <div class="section-heading">
+                    <h2>Sobre o
+                        <span>Sarcophagus</span></h2>
+                    <br>
+                </div>
+                <p>
+                    Software Livre para gerenciamento de cemitérios! O Sarcóphagus contempla as maiores necessidades para a gestão dos negócios que envolvem a administração de um cemitério, interagindo diretamente com os seguintes recursos: controle das áreas disponíveis (cemitérios, jazigos etc), características do jazigo (mapeamento das gavetas, provendo informações sobre quais estão vagas ou ocupadas), exumações, trasferências e ossários, e fornecimento de dados completos do sepultado e funerária que o atendeu, dos responsáveis do sepultado e relatórios e gerenciais.
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+                <img height="250px" width="380px" src="/images/logo-sarcophagus6.png" class="attachment-full img-responsive" alt="Logo do sarcophagus">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <div class="image-holder col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-left">
+        <div class="background-imgholder">
+            <img src="/images/SarcophagusInicial.png" alt="Tela Inicial do Sarcophagus" class="img-responsive" style="display:none;"/>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="col-md-7 col-md-offset-5 col-sm-8 col-sm-offset-2 col-xs-12 text-inner ">
+            <div class="text-block">
+                <div class="section-heading">
+                    <h1>Vantagens de usar o
+                        <span>Sarcophagus</span></h1>
+                </div>
+
+                <ul class="aboutul">
+                    <li>
+                        <i class="fa fa-check"></i>Cadastro geral de todos os cemitérios do município.</li>
+                    <li>
+                        <i class="fa fa-check"></i>Elabora o registro de dados para o sepultamento em diversos níveis (nome, documento, localização das sepulturas, datas e grau de parentesco).</li>
+                    <li>
+                        <i class="fa fa-check"></i>Mapeia as áreas do cemitério.</li>
+                    <li>
+                        <i class="fa fa-check"></i>Emite relatório de localização das sepulturas.</li>
+                    <li>
+                        <i class="fa fa-check"></i>Permite controle e monitoramento de informações como número de falecimentos.</li>
+                    <li>
+                        <i class="fa fa-check"></i>Registra as causas da morte e as características físicas das pessoas falecidas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact-page">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>Solicite o
+                <span>Sarcophagus</span>
+                para o seu município</h2>
+            <p class="subheading">Firmando o Termo de Cooperção Técnica com o Município de Guaíra este concederá o acesso ao projeto (código fonte, banco de dados) ao município parceiro. Tornando este um colaborador para as melhorias do software.</p>
+        </div>
+        <div class="row contact-wrap">
+            <div class="status alert alert-success" style="display: none"></div>
+            <form id="main-contact-form" class="contact-form" method="POST" action="/seti/sistemas/SobreSarcophagus">
+                {% include "../parts/sarcophagusFields.njk"%}
+            </form>
+        </div>
+    </section>
+{% endblock content %}

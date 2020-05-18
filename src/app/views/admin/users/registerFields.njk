@@ -1,0 +1,25 @@
+<div class="card-body">
+    <div class="form-group">
+        <label>Nome</label>
+        <div>
+            <input type="text" name="name" class="form-control" placeholder="Digite o nome" value="{{user.name}}" required="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" name="email" class="form-control" placeholder="Digite o email" value="{{user.email}}" required="required">
+    </div>
+    <label>Tipo do Usuário</label>
+    <select class="form-control" name="userType">
+        <option value="admin">Administrador</option>
+        <option value="comum">Comum</option>
+    </select>
+    <div class="form-group">
+        <label>Senha</label>
+        <input type="password" name="password" class="form-control" placeholder="Digite uma senha" required="required">
+    </div>
+    <div class="form-group">
+        <label>Repita a senha</label>
+        <input type="password" name="passwordRepeat" class="form-control" placeholder="Repita a senha digitada" required="required">
+    </div>
+</div>
