@@ -1,4 +1,4 @@
-# Web Page of Secretária de Tecnologia da Informação de Guaíra - PR.
+# Web Site of Secretária de Tecnologia da Informação de Guaíra - PR.
 In this site you can find informations about the I.T department from the city hall of Guaíra - PR - Brazil, like some services that it provides and the web systems that were made by the development team.
 
 ## Used technologies and libs:
