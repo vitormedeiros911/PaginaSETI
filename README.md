@@ -1,11 +1,11 @@
-# Página da Secretária de Tecnologia da Informação de Guaíra - PR.
-É falado sobre a secretaria, o sistemas desenvolvidos pela secretaria,
-também será postado tutoriais com o intuito de instruir os servidores da Prefeitura municipal de Guaíra - PR
+# Web Page of Secretária de Tecnologia da Informação de Guaíra - PR.
+In this site you can find informations about the I.T department from the city hall of Guaíra - PR - Brazil, like some services that it provides and the web systems that were made by the development team.
 
-## Tecnologias e bibliotecas utilizadas:
+## Used technologies and libs:
 * JavaScript;
 * CSS;
-* HTML
+* HTML;
+* Bootsrap 3 and Bootsrap 4;
 * Node.js;
 * Express;
 * PostgreSQL;
@@ -13,9 +13,9 @@ também será postado tutoriais com o intuito de instruir os servidores da Prefe
 * NodeMailer;
 * Multer;
 * Sharp.js;
-* E Outras bibliotecas integradas aos layouts
+* And others libs integrated to the layouts
 
 ## Layouts
-Layouts open source utilizados: 
+Open-source layouts that were used: 
 * [AdminLTE3](https://adminlte.io/themes/v3/index.html);
 * [Debut](https://www.free-css.com/free-css-templates/page244/debut).
